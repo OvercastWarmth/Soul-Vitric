@@ -20,7 +20,8 @@
 		},
 		"intermediate_mappings": "net.fabricmc:intermediary",
 		"entrypoints": {
-			"init": "com.example.example_mod.ExampleMod"
+			"init": "io.github.Ringlings.SoulVitricMod",
+			"client_init": "io.github.Ringlings.SoulVitricClient"
 		},
 		"depends": [
 			{
