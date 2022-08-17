@@ -1,6 +1,8 @@
 package io.github.Ringlings;
 
-import io.github.Ringlings.block.*;
+import io.github.Ringlings.block.CharredSoulVitric;
+import io.github.Ringlings.block.SoulVitric;
+import io.github.Ringlings.block.SoulVitricPain;
 import net.minecraft.item.BlockItem;
 import net.minecraft.item.ItemGroup;
 import net.minecraft.util.Identifier;
@@ -22,14 +24,17 @@ public class SoulVitricMod implements ModInitializer {
 	public static final Logger LOGGER = LoggerFactory.getLogger("Soul Vitric");
 
 	public static final SoulVitric SOUL_VITRIC = new SoulVitric(QuiltBlockSettings.copy(GLASS).strength(0.7F, 6.0F));
+	public static final SoulVitricPain SOUL_VITRIC_PAIN = new SoulVitricPain(QuiltBlockSettings.copy(GLASS).strength(0.7F, 6.0F));
 	public static final CharredSoulVitric CHARRED_SOUL_VITRIC = new CharredSoulVitric(QuiltBlockSettings.copy(TINTED_GLASS).strength(0.8F, 6.0F));
 
 	@Override
 	public void onInitialize(ModContainer mod) {
-		LOGGER.info("Hello Quilt world from \\{\\}!\", mod.metadata().name());");
+		LOGGER.info("Hello Quilt world from {}!", mod.metadata().name());
 
 		Registry.register(Registry.BLOCK, new Identifier("soul_vitric", "soul_vitric"), SOUL_VITRIC);
 		Registry.register(Registry.ITEM, new Identifier("soul_vitric", "soul_vitric"), new BlockItem(SOUL_VITRIC, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
+		Registry.register(Registry.BLOCK, new Identifier("soul_vitric", "soul_vitric_pane"), SOUL_VITRIC_PAIN);
+		Registry.register(Registry.ITEM, new Identifier("soul_vitric", "soul_vitric_pane"), new BlockItem(SOUL_VITRIC_PAIN, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
 		Registry.register(Registry.BLOCK, new Identifier("soul_vitric", "charred_soul_vitric"), CHARRED_SOUL_VITRIC);
 		Registry.register(Registry.ITEM, new Identifier("soul_vitric", "charred_soul_vitric"), new BlockItem(CHARRED_SOUL_VITRIC, new QuiltItemSettings().group(ItemGroup.DECORATIONS)));
 	}

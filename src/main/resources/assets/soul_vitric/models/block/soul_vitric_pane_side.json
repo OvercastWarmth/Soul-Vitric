@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/template_glass_pane_side",
+  "textures": {
+    "edge": "soul_vitric:block/soul_vitric_pane_top",
+    "pane": "soul_vitric:block/soul_vitric"
+  }
+}
